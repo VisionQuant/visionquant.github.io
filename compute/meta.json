@@ -1,0 +1,144 @@
+{
+ "version": 1,
+ "rows": 4096,
+ "params": {
+  "64": {
+   "file": "params_d64.bin",
+   "rot": {
+    "offset": 0,
+    "count": 4096,
+    "dtype": "f64"
+   },
+   "qjl": {
+    "offset": 32768,
+    "count": 4096,
+    "dtype": "f64"
+   },
+   "query": {
+    "offset": 65536,
+    "count": 64,
+    "dtype": "f64"
+   },
+   "centroids_1": {
+    "offset": 66048,
+    "count": 2,
+    "dtype": "f64"
+   },
+   "centroids_2": {
+    "offset": 66064,
+    "count": 4,
+    "dtype": "f64"
+   },
+   "centroids_3": {
+    "offset": 66096,
+    "count": 8,
+    "dtype": "f64"
+   },
+   "centroids_4": {
+    "offset": 66160,
+    "count": 16,
+    "dtype": "f64"
+   }
+  },
+  "128": {
+   "file": "params_d128.bin",
+   "rot": {
+    "offset": 0,
+    "count": 16384,
+    "dtype": "f64"
+   },
+   "qjl": {
+    "offset": 131072,
+    "count": 16384,
+    "dtype": "f64"
+   },
+   "query": {
+    "offset": 262144,
+    "count": 128,
+    "dtype": "f64"
+   },
+   "centroids_1": {
+    "offset": 263168,
+    "count": 2,
+    "dtype": "f64"
+   },
+   "centroids_2": {
+    "offset": 263184,
+    "count": 4,
+    "dtype": "f64"
+   },
+   "centroids_3": {
+    "offset": 263216,
+    "count": 8,
+    "dtype": "f64"
+   },
+   "centroids_4": {
+    "offset": 263280,
+    "count": 16,
+    "dtype": "f64"
+   }
+  }
+ },
+ "datasets": {
+  "model_a": {
+   "file": "model_a.bin",
+   "label": "모델 A의 실제 기억",
+   "keys": {
+    "offset": 0,
+    "count": 524288,
+    "dtype": "f16"
+   },
+   "values": {
+    "offset": 1048576,
+    "count": 524288,
+    "dtype": "f16"
+   },
+   "rows": 4096,
+   "d": 128,
+   "dropped": 0,
+   "source": "experiments/data/kv/qwen3-0.6b_keys.npy, _values.npy(길이가 0이 아닌 줄의 앞 4,096개)"
+  },
+  "model_b": {
+   "file": "model_b.bin",
+   "label": "모델 B의 실제 기억",
+   "keys": {
+    "offset": 0,
+    "count": 262144,
+    "dtype": "f16"
+   },
+   "values": {
+    "offset": 524288,
+    "count": 262144,
+    "dtype": "f16"
+   },
+   "rows": 4096,
+   "d": 64,
+   "dropped": 0,
+   "source": "experiments/data/kv/qwen2.5-0.5b-instruct_keys.npy, _values.npy(길이가 0이 아닌 줄의 앞 4,096개)"
+  },
+  "synthetic": {
+   "file": "synthetic.bin",
+   "label": "연습용 무작위 숫자",
+   "keys": {
+    "offset": 0,
+    "count": 524288,
+    "dtype": "f32"
+   },
+   "values": {
+    "offset": 2097152,
+    "count": 524288,
+    "dtype": "f32"
+   },
+   "query": {
+    "offset": 4194304,
+    "count": 128,
+    "dtype": "f32"
+   },
+   "rows": 4096,
+   "d": 128,
+   "dropped": 0,
+   "source": "표준정규 난수(시드 5000 + 128)를 32비트로 길이 1로(E1·E2와 같음)"
+  }
+ },
+ "note": "build_web_compute_data.py가 실험 코드·데이터에서 만든 브라우저 계산 재료. 손으로 고치지 않는다."
+}
